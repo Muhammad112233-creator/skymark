@@ -1,0 +1,20 @@
+# OS housekeeping
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# local test servers / logs
+*.log
+node_modules/
+.npm
+.tmp/
+
+# nothing here needs building — dist folders would only be stale copies
+dist/
+build/
