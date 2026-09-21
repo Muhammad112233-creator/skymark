@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skymark Limited | Real Estate, Reimagined for Lahore</title>
+    <meta
+      name="description"
+      content="For over 35 years, Skymark has shaped homes, workplaces and whole neighbourhoods across Lahore — from the Walled City to the southern parks."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="importmap">
+      { "imports": { "three": "./js/vendor/three.module.js" } }
+    </script>
+  </head>
+  <body>
+    <!-- the world behind everything -->
+    <div class="webgl-stage" aria-hidden="true">
+      <div class="webgl-veil"></div>
+    </div>
+
+    <!-- district markers live above the map, below the frame -->
+    <div class="districts" aria-hidden="true"></div>
+
+    <div class="site">
+      <div class="frame">
+        <div class="bevel-clip">
+          <header class="site-header" aria-label="Main site navigation">
+            <a class="logo" href="index.html" aria-label="Skymark — home">
+              <svg
+                class="logo-word"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 186 20"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M0 0h20.215v4.043H0zM0 4.043h4.043v4.043H0zM0 8.086h20.215v4.043H0zM16.172 12.129h4.043v4.043H16.172zM0 16.172h20.215v4.043H0zM27.631 0h4.043v4.043H27.631zM43.803 0h4.043v4.043H43.803zM27.631 4.043h4.043v4.043H27.631zM39.76 4.043h4.043v4.043H39.76zM27.631 8.086h4.043v4.043H27.631zM35.717 8.086h4.043v4.043H35.717zM27.631 12.129h4.043v4.043H27.631zM39.76 12.129h4.043v4.043H39.76zM27.631 16.172h4.043v4.043H27.631zM43.803 16.172h4.043v4.043H43.803zM55.262 0h4.043v4.043H55.262zM71.434 0h4.043v4.043H71.434zM59.305 4.043h4.043v4.043H59.305zM67.391 4.043h4.043v4.043H67.391zM63.348 8.086h4.043v4.043H63.348zM63.348 12.129h4.043v4.043H63.348zM63.348 16.172h4.043v4.043H63.348zM82.893 0h4.043v4.043H82.893zM99.065 0h4.043v4.043H99.065zM82.893 4.043h8.086v4.043H82.893zM95.022 4.043h8.086v4.043H95.022zM82.893 8.086h4.043v4.043H82.893zM90.979 8.086h4.043v4.043H90.979zM99.065 8.086h4.043v4.043H99.065zM82.893 12.129h4.043v4.043H82.893zM99.065 12.129h4.043v4.043H99.065zM82.893 16.172h4.043v4.043H82.893zM99.065 16.172h4.043v4.043H99.065zM118.61 0h4.043v4.043H118.61zM114.567 4.043h4.043v4.043H114.567zM122.653 4.043h4.043v4.043H122.653zM114.567 8.086h12.129v4.043H114.567zM110.524 12.129h4.043v4.043H110.524zM126.696 12.129h4.043v4.043H126.696zM110.524 16.172h4.043v4.043H110.524zM126.696 16.172h4.043v4.043H126.696zM138.155 0h16.172v4.043H138.155zM138.155 4.043h4.043v4.043H138.155zM154.327 4.043h4.043v4.043H154.327zM138.155 8.086h16.172v4.043H138.155zM138.155 12.129h4.043v4.043H138.155zM150.284 12.129h4.043v4.043H150.284zM138.155 16.172h4.043v4.043H138.155zM154.327 16.172h4.043v4.043H154.327zM165.786 0h4.043v4.043H165.786zM181.958 0h4.043v4.043H181.958zM165.786 4.043h4.043v4.043H165.786zM177.915 4.043h4.043v4.043H177.915zM165.786 8.086h4.043v4.043H165.786zM173.872 8.086h4.043v4.043H173.872zM165.786 12.129h4.043v4.043H165.786zM177.915 12.129h4.043v4.043H177.915zM165.786 16.172h4.043v4.043H165.786zM181.958 16.172h4.043v4.043H181.958z"
+                ></path>
+              </svg>
+              <svg
+                class="logo-mark"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M32 32H0V0h6.4L32 25.6Zm-6.4-6.4V6.4H12.8Z"
+                  fill-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+
+            <div class="header-cluster">
+              <nav class="header-nav" aria-label="Secondary">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="projects.html" class="nav-link">Portfolio</a>
+                <a href="careers.html" class="nav-link">Careers</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="news.html" class="nav-link">News</a>
+              </nav>
+              <a
+                class="btn btn--chrome"
+                data-theme="transparent"
+                href="contact.html"
+                aria-label="Client login"
+              >
+                <span class="btn-box"
+                  ><span class="btn-content">
+                    <span class="px-icon px-icon--column" data-icon="column"
+                      ><span data-sq="1"></span><span data-sq="2"></span
+                      ><span data-sq="3"></span><span data-sq="4"></span
+                      ><span data-sq="5"></span><span data-sq="6"></span
+                    ></span>
+                    <span class="btn-label">Login</span>
+                    <span class="btn-bg"></span> </span
+                ></span>
+              </a>
+              <button
+                class="btn btn--chrome"
+                data-theme="solid-light"
+                data-menu-toggle
+                aria-label="Open menu"
+              >
+                <span class="btn-box"
+                  ><span class="btn-content">
+                    <span class="px-icon px-icon--grid" data-icon="grid"
+                      ><span data-sq="1"></span><span data-sq="2"></span
+                      ><span data-sq="3"></span><span data-sq="4"></span
+                    ></span>
+                    <span class="btn-label">Menu</span>
+                    <span class="btn-bg"></span> </span
+                ></span>
+              </button>
+            </div>
+          </header>
+
+          <nav class="rail" aria-label="Chapters"></nav>
+
+          <div class="page-scroll">
+            <div class="sections"></div>
+          </div>
+
+          <footer class="bottombar">
+            <div class="progress-fill" aria-hidden="true"></div>
+            <div class="bar-line" aria-hidden="true"></div>
+            <div class="scroll-hint">
+              <span class="chev" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 8 12"
+                  fill="none"
+                  width="8"
+                  height="12"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M4 6 .536 2.25h6.928zM4 11 .536 7.25h6.928z"
+                  ></path>
+                </svg>
+              </span>
+              <span class="txt label-mono">Scroll to explore</span>
+            </div>
+            <div class="bar-row">
+              <button
+                class="bar-btn bar-btn--left"
+                data-sound-toggle
+                aria-label="Toggle sound"
+              >
+                <span class="sep" aria-hidden="true"></span>
+                <span class="bar-ico" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    width="20"
+                    height="20"
+                  >
+                    <path fill="currentColor" d="M10 3 5 7H2v6h3l5 4z"></path>
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-width="1.5"
+                      d="m14 8 4 4m0-4-4 4"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="lbl label-mono">Sound Off</span>
+              </button>
+
+              <div class="pn-mobile">
+                <div
+                  class="pn pn--prev"
+                  data-prev
+                  role="button"
+                  tabindex="0"
+                  aria-label="Previous chapter"
+                >
+                  <span class="tri" aria-hidden="true">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 10 8"
+                      fill="none"
+                      width="10"
+                      height="8"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M5 4 8.75.536v6.928zM0 4 3.75.536v6.928z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span>Prev.</span>
+                </div>
+                <div
+                  class="pn pn--next"
+                  data-next
+                  role="button"
+                  tabindex="0"
+                  aria-label="Next chapter"
+                >
+                  <span class="sep-line" aria-hidden="true"></span>
+                  <span>Next</span>
+                  <span class="tri" aria-hidden="true">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 10 8"
+                      fill="none"
+                      width="10"
+                      height="8"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M5 4 1.25.536v6.928zM10 4 6.25.536v6.928z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+
+              <a
+                class="bar-btn bar-btn--right"
+                href="https://wa.me/9230000000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat with us on WhatsApp"
+              >
+                <span class="sep" aria-hidden="true"></span>
+                <span class="lbl label-mono">Talk to us</span>
+                <span class="bar-ico" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    width="20"
+                    height="20"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M10 0C4.5 0 .1 4.4.1 9.8c0 1.7.5 3.4 1.3 4.8L0 20l5.6-1.4c1.4.7 2.9 1.1 4.4 1.1 5.5 0 9.9-4.4 9.9-9.8S15.5 0 10 0zm0 18c-1.3 0-2.6-.3-3.7-1l-.3-.2-3 .8.8-2.9-.2-.3c-.8-1.1-1.2-2.5-1.2-3.9C2.4 6.3 5.8 3 10 3s7.6 3.3 7.6 7.5S14.2 18 10 18zm4.2-5.6c-.2-.1-1.3-.7-1.6-.8-.2-.1-.4-.1-.5.1s-.6.8-.7.9c-.1.2-.3.2-.5.1s-1-.4-1.9-1.2c-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.2.2-.4 0-.1 0-.3-.1-.4-.1-.1-.6-1.3-.8-1.8-.2-.5-.4-.4-.6-.4h-.4c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.9 2.3 1 2.5c.1.2 1.7 2.6 4 3.6.6.2 1 .4 1.4.5.6.2 1.1.2 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .2-1.1-.1-.2-.2-.2-.4-.3z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- menu overlay -->
+    <div class="menu-overlay" aria-hidden="true">
+      <div class="menu-backdrop"></div>
+      <div class="menu-panel-holder">
+        <div class="menu-panel">
+          <div class="panel-inner">
+            <div class="menu-close">
+              <button
+                class="btn"
+                data-theme="solid-dark"
+                data-corners="bl-tr"
+                aria-label="Close menu"
+              >
+                <span class="btn-box"
+                  ><span class="btn-content">
+                    <span class="px-icon px-icon--cross" data-icon="cross"
+                      ><span data-sq="1"></span><span data-sq="2"></span
+                      ><span data-sq="3"></span><span data-sq="4"></span
+                    ></span>
+                    <span class="btn-label">Close</span>
+                    <span class="btn-bg"></span> </span
+                ></span>
+              </button>
+            </div>
+
+            <div class="menu-explore">
+              <span class="dot" aria-hidden="true"></span>
+              <span class="lbl">Explore</span>
+            </div>
+
+            <nav class="menu-links" aria-label="Menu">
+              <a href="about.html"><span class="lbl">About</span></a>
+              <a href="projects.html"><span class="lbl">Portfolio</span></a>
+              <a href="careers.html"><span class="lbl">Careers</span></a>
+              <a href="contact.html"><span class="lbl">Contact</span></a>
+              <a href="news.html"><span class="lbl">News</span></a>
+            </nav>
+
+            <div class="menu-footer">
+              <div class="f-label">
+                <span class="dot" aria-hidden="true"></span>
+                <span>Links</span>
+              </div>
+              <div class="f-links">
+                <a href="about.html"
+                  >Investor Desk <span class="num">01</span></a
+                >
+                <a href="about.html"
+                  >Building Regulations <span class="num">02</span></a
+                >
+                <a href="about.html"
+                  >Privacy Policy <span class="num">03</span></a
+                >
+                <a href="about.html"
+                  >Terms of Service <span class="num">04</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- first-click sound hint -->
+    <div class="audio-prompt" aria-hidden="true">
+      <span class="a-ico">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="none"
+          width="16"
+          height="16"
+        >
+          <path fill="currentColor" d="M10 3 5 7H2v6h3l5 4z"></path>
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="1.5"
+            d="m14 8 4 4m0-4-4 4"
+          ></path>
+        </svg>
+      </span>
+      <span class="lbl">Click for sound</span>
+    </div>
+
+    <!-- route curtain -->
+    <div class="page-transition" aria-hidden="true"></div>
+
+    <!-- loader -->
+    <div class="loader" aria-label="Loading">
+      <div class="loader-center">
+        <div class="logo-holder">
+          <div class="progress-text">0%</div>
+          <div class="flash-square"></div>
+          <div class="loading-text">Loading content</div>
+          <div class="status-lines">
+            <div class="line-holder line">
+              <span class="ghost">100% Loaded</span>
+              <span class="lbl">100% Loaded</span>
+              <span class="block"></span>
+            </div>
+            <div class="line-holder line">
+              <span class="ghost">Ready to Explore</span>
+              <span class="lbl">Ready to Explore</span>
+              <span class="block"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/vendor/gsap.min.js"></script>
+    <script src="js/vendor/ScrollTrigger.min.js"></script>
+    <script src="js/vendor/SplitText.min.js"></script>
+    <script src="js/vendor/ScrambleTextPlugin.min.js"></script>
+    <script src="js/vendor/lenis.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/home.js"></script>
+    <script type="module" src="js/webgl.js"></script>
+  </body>
+</html>

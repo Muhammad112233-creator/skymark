@@ -1,0 +1,40 @@
+/* Skymark — self hosted fonts.
+   Space Grotesk (SIL OFL 1.1, (c) The Space Grotesk Project Authors)
+   Commit Mono (SIL OFL 1.1, (c) Eigil Nikolajsen) */
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/SpaceGrotesk-300.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/SpaceGrotesk-400.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/SpaceGrotesk-700.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Commit Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/CommitMono-400.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Commit Mono Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/CommitMono-700.woff2") format("woff2");
+  font-display: swap;
+}
